@@ -23,6 +23,9 @@ html {
   backdrop-filter: blur(10px);
   box-shadow: 0 1px 0 var(--k-groove);
 }
+.s-nav {
+  margin-left: auto;
+}
 .s-brand {
   display: flex;
   align-items: center;
@@ -132,6 +135,22 @@ html {
 .s-swatch-chip[data-color="accent"] {
   background: var(--k-accent);
 }
+.s-sounds {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--k-space-3) var(--k-space-6);
+}
+.s-sound {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: var(--k-space-3);
+}
+.s-sound .k-button {
+  justify-content: flex-start;
+  padding-inline: var(--k-space-3);
+}
 .s-scale {
   display: grid;
   gap: var(--k-space-5);
@@ -191,14 +210,18 @@ html {
 
 .s-verify {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   max-width: 44rem;
   margin: 0 auto;
 }
-.s-verify-activity {
+.s-verify-side {
+  display: flex;
   flex: 1 1 0;
-  align-self: center;
+  min-width: 0;
+}
+.s-verify-activity {
+  flex: 1;
   min-width: 0;
 }
 .s-verify-card {
@@ -457,7 +480,7 @@ html {
     flex-direction: column;
     gap: var(--k-space-5);
   }
-  .s-verify-activity {
+  .s-verify-side {
     align-self: stretch;
   }
   .s-inbox-tabs {

@@ -1,6 +1,6 @@
 import { ArrowRightIcon, AtSignIcon, CheckIcon } from "lucide-react"
 import { useState } from "react"
-import { Badge, Bridge, Button, CodeField, Divider, Panel, PanelBody, Spinner, Stage, StatusTab, Steps, type Step, Text } from "../../system"
+import { Badge, Bridge, Button, CodeField, Divider, Panel, PanelBody, Spinner, Stage, StatusTab, Steps, type Step, Text, useSound } from "../../system"
 import { wait } from "../wait"
 
 const methods = {
@@ -23,9 +23,12 @@ function Verification() {
   const [method, setMethod] = useState<Method>("email")
   const [verified, setVerified] = useState(false)
 
+  const { play } = useSound()
+
   const verify = async () => {
     await wait(900)
     setVerified(true)
+    play("success")
   }
 
   const change = () => {
@@ -37,15 +40,17 @@ function Verification() {
   return (
     <Stage glyph="at">
       <div className="s-verify">
-        <Panel className="s-verify-activity">
-          <PanelBody>
-            <Text as="h3" kind="caption" tone="soft">
-              Agent Activity
-            </Text>
-            <Steps label="Agent activity" items={stepsFor(verified)} />
-          </PanelBody>
-        </Panel>
-        <Bridge />
+        <div className="s-verify-side">
+          <Panel className="s-verify-activity">
+            <PanelBody>
+              <Text as="h3" kind="caption" tone="soft">
+                Agent Activity
+              </Text>
+              <Steps label="Agent activity" items={stepsFor(verified)} />
+            </PanelBody>
+          </Panel>
+          <Bridge />
+        </div>
         <div className="s-verify-card">
           <StatusTab badge={<Badge icon={<AtSignIcon aria-hidden="true" />}>Agent Active</Badge>}>
             {verified ? <CheckIcon aria-hidden="true" className="s-icon" /> : <Spinner />}

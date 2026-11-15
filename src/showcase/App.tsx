@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { Text } from "../system"
+import { SoundToggle, Text } from "../system"
 import { ComposerDemo } from "./composer-demo"
 import { Foundations } from "./foundations"
 import { Parts } from "./parts"
@@ -60,9 +60,10 @@ function App() {
             </a>
           ))}
         </nav>
+        <SoundToggle />
       </header>
       <main className="s-main">
-        <Section id="foundations" title="Foundations" lead="Warm dark surfaces with grain, one ember accent, a light sans for headings and a mono for everything you read closely.">
+        <Section id="foundations" title="Foundations" lead="Warm dark surfaces with grain, one ember accent, a light sans for headings, a mono for everything you read closely, and a small set of sounds.">
           <Foundations />
         </Section>
         <Section id="parts" title="Parts" lead="Small pieces. Keyboard, focus and state come from the behavior library, the look comes from tokens.">

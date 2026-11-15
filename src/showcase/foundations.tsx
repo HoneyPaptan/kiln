@@ -1,4 +1,5 @@
-import { Panel, PanelBody, Text, type TextKind, Tray } from "../system"
+import { PlayIcon } from "lucide-react"
+import { Button, cueNames, cues, Panel, PanelBody, Text, type TextKind, Tray } from "../system"
 
 const colors = [
   { name: "page", value: "#1c1a19" },
@@ -12,12 +13,12 @@ const colors = [
 ]
 
 const scale: { kind: TextKind; sample: string; note: string }[] = [
-  { kind: "display", sample: "Agent Running", note: "display, DM Sans 300, 32" },
-  { kind: "heading", sample: "Enter the verification code", note: "heading, DM Sans 300, 24" },
-  { kind: "title", sample: "Verifying identity", note: "title, DM Sans 400, 17" },
-  { kind: "label", sample: "Checking vendor details", note: "label, DM Mono 400, 15" },
-  { kind: "body", sample: "We sent a code to agent@example.com", note: "body, DM Mono 400, 14" },
-  { kind: "caption", sample: "Agent Activity", note: "caption, DM Mono 400, 13" },
+  { kind: "display", sample: "Agent Running", note: "display, Geist 300, 32" },
+  { kind: "heading", sample: "Enter the verification code", note: "heading, Geist 300, 24" },
+  { kind: "title", sample: "Verifying identity", note: "title, Geist 400, 17" },
+  { kind: "label", sample: "Checking vendor details", note: "label, Geist Mono 400, 15" },
+  { kind: "body", sample: "We sent a code to agent@example.com", note: "body, Geist Mono 400, 14" },
+  { kind: "caption", sample: "Agent Activity", note: "caption, Geist Mono 400, 13" },
 ]
 
 function Foundations() {
@@ -44,6 +45,19 @@ function Foundations() {
             </Text>
             <Text as="span" kind="caption" tone="dim">
               {row.note}
+            </Text>
+          </li>
+        ))}
+      </ul>
+      <ul className="s-sounds" aria-label="Sound cues">
+        {cueNames.map((name) => (
+          <li key={name} className="s-sound">
+            <Button variant="quiet" sound={name} aria-label={`Play ${name}`}>
+              <PlayIcon aria-hidden="true" />
+              {name}
+            </Button>
+            <Text as="span" tone="soft">
+              {cues[name].when}
             </Text>
           </li>
         ))}
