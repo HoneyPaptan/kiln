@@ -1,0 +1,76 @@
+.k-composer {
+  display: grid;
+  gap: var(--k-space-2);
+  padding: var(--k-space-2);
+  background: var(--k-grain), var(--k-surface);
+  border-radius: var(--k-radius-md);
+  box-shadow:
+    inset 0 1px 0 var(--k-ridge),
+    0 0 0 1px rgb(0 0 0 / 0.22),
+    0 22px 44px -26px rgb(0 0 0 / 0.75);
+}
+.k-composer-field {
+  display: grid;
+  padding: var(--k-space-3) var(--k-space-4);
+  background: var(--k-grain), var(--k-sunken);
+  border-radius: var(--k-radius-sm);
+  box-shadow:
+    inset 0 0 0 1px var(--k-line),
+    inset 0 2px 6px rgb(0 0 0 / 0.3);
+  cursor: text;
+}
+.k-composer-field:has(:focus-visible) {
+  box-shadow:
+    inset 0 0 0 1px var(--k-accent-press),
+    inset 0 2px 6px rgb(0 0 0 / 0.3);
+}
+.k-composer[data-phase="failed"] .k-composer-field {
+  box-shadow:
+    inset 0 0 0 1px var(--k-danger),
+    inset 0 2px 6px rgb(0 0 0 / 0.3);
+}
+.k-composer-input {
+  display: block;
+  width: 100%;
+  max-height: 11rem;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  resize: none;
+  font: 400 1rem/1.5rem var(--k-font-mono);
+  color: var(--k-text);
+  caret-color: var(--k-accent);
+}
+.k-composer-input::placeholder {
+  color: var(--k-text-dim);
+  opacity: 1;
+}
+.k-composer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--k-space-3);
+  padding-left: var(--k-space-2);
+}
+.k-composer-status {
+  display: flex;
+  align-items: center;
+  gap: var(--k-space-2);
+  min-width: 0;
+  font: var(--k-type-caption);
+  color: var(--k-text-soft);
+}
+.k-composer-status[data-phase="failed"] {
+  color: var(--k-danger);
+}
+.k-composer-status span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.k-composer-actions {
+  display: flex;
+  flex: none;
+  gap: var(--k-space-2);
+}
