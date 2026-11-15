@@ -49,19 +49,6 @@ function Foundations() {
           </li>
         ))}
       </ul>
-      <ul className="s-sounds" aria-label="Sound cues">
-        {cueNames.map((name) => (
-          <li key={name} className="s-sound">
-            <Button variant="quiet" sound={name} aria-label={`Play ${name}`}>
-              <PlayIcon aria-hidden="true" />
-              {name}
-            </Button>
-            <Text as="span" tone="soft">
-              {cues[name].when}
-            </Text>
-          </li>
-        ))}
-      </ul>
       <div className="s-layers">
         <Panel>
           <PanelBody className="s-layer">
@@ -80,6 +67,19 @@ function Foundations() {
           </PanelBody>
         </Panel>
       </div>
+      <ul className="s-sounds" aria-label="Sound cues">
+        {cueNames.map((name) => (
+          <li key={name} className="s-sound">
+            <Button variant="quiet" sound={name} aria-label={`Play ${name}`}>
+              <PlayIcon aria-hidden="true" />
+              {name}
+            </Button>
+            <Text as="span" tone="soft">
+              {cues[name].when}
+            </Text>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

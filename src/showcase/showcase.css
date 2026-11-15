@@ -100,7 +100,7 @@ html {
 .s-swatches {
   display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: var(--k-space-3);
 }
 .s-swatch {
@@ -451,6 +451,9 @@ html {
   .s-composer,
   .s-foundations {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .s-swatches {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
