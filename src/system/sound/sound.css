@@ -1,0 +1,27 @@
+.k-sound-toggle {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--k-control);
+  height: var(--k-control);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--k-ink-600);
+  box-shadow: inset 0 0 0 1px var(--k-line);
+  color: var(--k-text-dim);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform var(--k-fast) var(--k-ease);
+}
+.k-sound-toggle:active {
+  transform: scale(0.92);
+}
+.k-sound-toggle[data-pressed] {
+  color: var(--k-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--k-accent-press);
+}
+.k-sound-toggle svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}

@@ -7,6 +7,8 @@ A pilot design system. Behavior comes from Vercel UI SDK (`@ui-sdk/core`, `@ui-s
 - `src/styles/` tokens and base styles. `tokens.css` is the only place raw colors live.
 - `src/system/` the design system. `surfaces`, `feedback`, `controls`, `data`, each a `.tsx` with a `.css` beside it. `index.ts` is the public entry.
 - `src/system/composer/` a component the library does not ship: `machine.ts` (pure state machine), `primitive.ts` (behavior, `definePrimitive`), `composer.tsx` (rendering and look).
+- `src/system/sound/` sound as part of the system. `cues.ts` is the cue map (the sound tokens), `rules.ts` turns a component change into a cue, `bind.ts` listens once for the whole page, `engine.ts` plays, `assets/` holds the recorded sounds.
+- `scripts/sound.ts` pulls a sound from the soundcn registry into `assets/`: `bun scripts/sound.ts click-soft`.
 - `src/showcase/` the demo page. It imports only from `src/system`.
 
 ## Rules
@@ -17,6 +19,8 @@ A pilot design system. Behavior comes from Vercel UI SDK (`@ui-sdk/core`, `@ui-s
 - Colors, type, space, radius and timing come from tokens. No raw values in component CSS except one off geometry.
 - Every control has a name. Change reasons use the library's shared vocabulary when one fits.
 - Animate only transform and opacity. Pressed feedback shows on pointer down.
+- Sound: a component never imports a sound file or plays a sound for its own state. It reports changes, and `rules.ts` decides the cue. A new library component needs one line there. Buttons carry `data-sound`. App code may call `play` for an outcome, like a finished task. Typing is always silent.
+- Sounds are real recordings from the registry (Kenney, CC0), never synthesized. Volumes live in `cues.ts`.
 - No comments in code. No dash characters in interface text.
 - No brand names or logos in the showcase.
 

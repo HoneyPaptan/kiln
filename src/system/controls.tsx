@@ -8,14 +8,15 @@ import { CheckIcon } from "lucide-react"
 import type { ComponentProps, ReactNode } from "react"
 import { cx } from "./cx"
 import { Count } from "./feedback"
+import type { Cue } from "./sound/cues"
 import { Flap } from "./surfaces"
 
 type Styled<Props> = Omit<Props, "className"> & { className?: string }
 
-type ButtonProps = Styled<ComponentProps<typeof BaseButton>> & { variant?: "key" | "accent" | "quiet" | "link"; block?: boolean }
+type ButtonProps = Styled<ComponentProps<typeof BaseButton>> & { variant?: "key" | "accent" | "quiet" | "link"; block?: boolean; sound?: Cue | "none" }
 
-function Button({ variant = "key", block, className, ...rest }: ButtonProps) {
-  return <BaseButton className={cx("k-button", className)} data-variant={variant} data-block={block ? "" : undefined} {...rest} />
+function Button({ variant = "key", block, sound = "press", className, ...rest }: ButtonProps) {
+  return <BaseButton className={cx("k-button", className)} data-variant={variant} data-block={block ? "" : undefined} data-sound={sound === "none" ? undefined : sound} {...rest} />
 }
 
 type CheckProps = Omit<Styled<ComponentProps<typeof Checkbox>>, "children"> & { label: ReactNode }
