@@ -1,8 +1,7 @@
 @layer ui-sdk;
 
-@import "@fontsource-variable/dm-sans";
-@import "@fontsource/dm-mono/400.css";
-@import "@fontsource/dm-mono/500.css";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
 @import "./tokens.css";
 
 @layer ui-sdk {

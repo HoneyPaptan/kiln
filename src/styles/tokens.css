@@ -42,8 +42,8 @@
   --k-on-key: var(--k-ink-900);
   --k-danger: var(--k-rust-400);
 
-  --k-font-sans: "DM Sans Variable", ui-sans-serif, system-ui, sans-serif;
-  --k-font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --k-font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --k-font-mono: "Geist Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --k-type-display: 300 2rem/2.375rem var(--k-font-sans);
   --k-type-heading: 300 1.5rem/1.875rem var(--k-font-sans);
   --k-type-title: 400 1.0625rem/1.5rem var(--k-font-sans);
