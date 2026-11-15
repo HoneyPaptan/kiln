@@ -1,0 +1,79 @@
+:root {
+  --k-ink-950: #151312;
+  --k-ink-900: #1c1a19;
+  --k-ink-850: #211e1c;
+  --k-ink-800: #272320;
+  --k-ink-700: #322f2d;
+  --k-ink-600: #3b3735;
+  --k-ink-500: #45403e;
+  --k-ink-400: #4f4a48;
+  --k-ash-400: #a8a29c;
+  --k-ash-300: #c4beb8;
+  --k-ash-200: #d9d9d9;
+  --k-ash-100: #ececec;
+  --k-ash-50: #fcfcfc;
+  --k-ember-300: #ff9a52;
+  --k-ember-500: #fc6400;
+  --k-ember-600: #cf5809;
+  --k-ember-900: #3a2416;
+  --k-rust-400: #ff8a7a;
+
+  --k-page: var(--k-ink-900);
+  --k-surface: var(--k-ink-700);
+  --k-raised: var(--k-ink-500);
+  --k-high: var(--k-ink-400);
+  --k-sunken: var(--k-ink-800);
+  --k-well: var(--k-ink-850);
+  --k-line: #4a4542;
+  --k-line-strong: #6a6460;
+  --k-groove: #1d1b1a;
+  --k-ridge: rgb(255 255 255 / 0.07);
+  --k-text: var(--k-ash-50);
+  --k-text-soft: var(--k-ash-300);
+  --k-text-dim: var(--k-ash-400);
+  --k-accent: var(--k-ember-500);
+  --k-accent-press: var(--k-ember-600);
+  --k-accent-soft: var(--k-ember-300);
+  --k-accent-wash: var(--k-ember-900);
+  --k-on-accent: var(--k-ink-950);
+  --k-key: var(--k-ash-200);
+  --k-key-hover: var(--k-ash-100);
+  --k-key-press: var(--k-ash-300);
+  --k-on-key: var(--k-ink-900);
+  --k-danger: var(--k-rust-400);
+
+  --k-font-sans: "DM Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --k-font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --k-type-display: 300 2rem/2.375rem var(--k-font-sans);
+  --k-type-heading: 300 1.5rem/1.875rem var(--k-font-sans);
+  --k-type-title: 400 1.0625rem/1.5rem var(--k-font-sans);
+  --k-type-label: 400 0.9375rem/1.375rem var(--k-font-mono);
+  --k-type-body: 400 0.875rem/1.3125rem var(--k-font-mono);
+  --k-type-caption: 400 0.8125rem/1.125rem var(--k-font-mono);
+  --k-type-micro: 400 0.75rem/1rem var(--k-font-mono);
+
+  --k-space-1: 0.25rem;
+  --k-space-2: 0.5rem;
+  --k-space-3: 0.75rem;
+  --k-space-4: 1rem;
+  --k-space-5: 1.25rem;
+  --k-space-6: 1.5rem;
+  --k-space-8: 2rem;
+  --k-space-12: 3rem;
+  --k-space-16: 4rem;
+
+  --k-radius-sm: 4px;
+  --k-radius-md: 6px;
+  --k-radius-lg: 9px;
+  --k-control: 2.25rem;
+  --k-cell: 2.875rem;
+
+  --k-fast: 90ms;
+  --k-base: 160ms;
+  --k-slow: 260ms;
+  --k-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --k-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 .26 0 0 0 -.06'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --k-glyph-at: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='24'%3E%3Ctext x='11' y='17' font-family='ui-monospace,Menlo,monospace' font-size='15' text-anchor='middle' fill='%23fff' fill-opacity='.07'%3E@%3C/text%3E%3C/svg%3E");
+  --k-glyph-bits: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='28'%3E%3Cg font-family='ui-monospace,Menlo,monospace' font-size='11' fill='%23fff' fill-opacity='.065'%3E%3Ctext x='0' y='11'%3E0 1 1 0%3C/text%3E%3Ctext x='0' y='25'%3E1 0 0 1%3C/text%3E%3C/g%3E%3C/svg%3E");
+}
